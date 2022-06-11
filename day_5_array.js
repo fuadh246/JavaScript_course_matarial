@@ -147,4 +147,68 @@
 // console.log(numbers2)
 // console.log(numbers2)
 
+console.log()
+console.log()
+console.log()
+console.log('Exercise: Level 1')
+console.log()
+
+const countries = [
+    'Albania',
+    'Bolivia',
+    'Canada',
+    'Denmark',
+    'Ethiopia',
+    'Finland',
+    'Germany',
+    'Hungary',
+    'Ireland',
+    'Japan',
+    'Kenya'
+  ]
+  
+  const webTechs = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Redux',
+    'Node',
+    'MongoDB'
+  ]
+const empty_array = []
+const numbers = [1,2,3,4,5,6,7,8,9]
+console.log(numbers.length)
+numbers.forEach(element => {
+    if (element % 2 != 0){
+        console.log(element)
+    }
+});
+
+const mixedDataTypes = [
+    'Fuad',
+    'Hassan',
+    19,
+    true,
+    {skills: ['HTML', 'CSS', 'JS', 'React', 'Python']}
+]
+console.log(mixedDataTypes);
+console.log(mixedDataTypes.length);
+
+for (let index = 0; index < mixedDataTypes.length; index++) {
+    const element = mixedDataTypes[index];
+    console.log(element)
+}
+mixedDataTypes.forEach(element => {
+    console.log(element)
+});
+
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+let sum = 0
+numbers.forEach(element => {
+    sum += element
+});
+console.log(sum)
+
+
 
