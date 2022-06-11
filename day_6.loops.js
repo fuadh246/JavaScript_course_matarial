@@ -30,3 +30,32 @@ do {
 } while (i <= 5)
 
 
+const webTechs = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Redux',
+    'Node',
+    'MongoDB'
+]
+
+for (const tech of webTechs) {
+    console.log(tech.toUpperCase())
+}
+
+for (let i = 0; i <= 7; i++) {
+    console.log('#'.repeat(i))
+}
+console.log('${i}\t${i ** 2}\t${i ** 3}')
+for (let i = 0; i <= 10; i++) {
+    console.log(`${i}\t${i ** 2}\t${i ** 3}`)
+}
+
+const alp = ['a','b','c','d','e','f']
+let pass = []
+for(let i=0;i<6;i++){
+    let randomNUM= Math.floor(Math.random()*alp.length)
+    pass.push(alp[randomNUM])
+}
+console.log(pass.toString().replace(/,/gi,''));
