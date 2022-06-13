@@ -205,7 +205,7 @@ mixedDataTypes.forEach(element => {
 
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 let sum = 0
-numbers.forEach(element => {
+ages.forEach(element => {
     sum = sum + element
 });
 console.log(sum)
