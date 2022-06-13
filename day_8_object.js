@@ -123,13 +123,75 @@ console.log(users);
 
 const result = Object.fromEntries([
     Object.entries(users).sort((a, b) => b[1].skills.length - a[1].skills.length)[0]
-  ]);
-  console.log(result);
+]);
+console.log(result);
 
 const r = Object.entries(users)
 console.log(r[0][1]['points']);
-r.forEach(element => {
-    if (r[element][1]['points'] >= 50) {
-        console.log(r[element])
+
+for (let i = 0; i < r.length; i++) {
+    // console.log(typeof(r[i][1]['points']))
+    if((r[i][1]['points']) >= 50){
+        console.log(r[i][1]['points'])
+        console.log(r[i])
     }
-})
+}
+
+const users2 = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt:'08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt:'08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt:'08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt:'08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt:'08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+    ];
+    // _id: 'ghderc',
+    //     username: 'Thomas',
+    //     email: 'thomas@thomas.com',
+    //     password: '123333',
+    //     createdAt:'08/01/2020 10:00 AM',
+    //     isLoggedIn: false
+console.log(users2[0].username)
+
+function signUP(users2,adding_user){
+    for (let i = 0; i < users2.length; i++) {
+        if((users2[i].username) != 'Fuad'){
+            console.log(users2[i])
+        }
+    }
+}
+console.log(users2);
