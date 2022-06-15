@@ -43,12 +43,31 @@
   titles[3].setAttribute('id', 'fourth-title')
   titles[3].classList.add('title', 'header-title')
   titles[3].classList.remove('header-title')
-
   titles[3].textContent = 'Fourth Title'
 
+  for (let i = 0; i < allTitle.length; i++) {
+    if (i % 2 === 0) {
+      allTitle[i].style.color = 'green'
+    }
+    else {
+      allTitle[i].style.color = 'red'
+    }
+  }
 
-
-
+  allTitle.forEach((title, i) => {
+    title.style.fontSize = '24px'
+    title.style.padding = '10px'
+    title.style.borderRadius = '10px'
+    if (i % 2 === 0) {
+      title.style.color = 'green'
+      title.style.background = 'red'
+      title.style.fontSize = '20px'
+    } else {
+      title.style.color = 'red'
+      title.style.background = 'green'
+      title.style.fontSize = '30px'
+    }
+  })
 
 </script>
 
