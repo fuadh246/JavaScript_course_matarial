@@ -141,3 +141,8 @@ const wholeNumbers = [...evens, ...odds]
 console.log(evenNumbers)
 console.log(oddNumbers)
 console.log(wholeNumbers)
+
+
+console.table(todoList[0])
+
+
