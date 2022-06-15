@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+</head>
+
+<body>
+    <div id="containner">
+        <h1>Number </h1>
+        <h1>Fuad Hassan</h1>
+        <input type="text" placeholder="Enter a number" id="number">
+        <button id="entered">Enter</button>
+
+    </div>
+    <div id="number_container">
+
+    </div>
+
+    <script>
+        const div = document.querySelector('#containner')
+        const number_container = document.querySelector('#number_container')
+        const titles = document.querySelectorAll('h1')
+        const input = document.querySelector('#number')
+        const button = document.querySelector('#entered')
+        titles.forEach((title) => {
+            title.style.color = 'black'
+            title.style.textAlign = 'center'
+        });
+        button.addEventListener('click', () => {
+            number_container.textContent = ''
+            length = input.value
+            input.value = ''
+            Generator(length)
+        })
+        function Generator(length) {
+            let number
+            for (let i = 1; i <= length; i++) {
+                number = document.createElement('div')
+                number.className = 'number'
+                number.style.fontSize = '25px'
+                number.textContent = i
+                number_container.appendChild(number)
+                number.style.margin = '5px'
+                number.style.padding = '25px 25px 30px'
+                number.style.display = 'inline-block'
+                number.style.border = '1px solid black'
+                if (isPrime(i) == true) {
+                    number.style.backgroundColor = 'red'
+                }
+                else if (i % 2 === 0) {
+                    number.style.backgroundColor = 'green'
+                }
+                else {
+                    number.style.backgroundColor = 'yellow'
+                }
+            }
+        }
+        function isPrime(num) {
+            if (num < 2) return false;
+
+            for (let k = 2; k < num; k++) {
+                if (num % k == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+    <style>
+        #containner {
+            text-align: center;
+            margin: 0 30px;
+        }
+    </style>
+</body>
+
+</html>

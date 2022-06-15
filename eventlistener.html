@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listener</title>
+</head>
+
+<body>
+    <button>Click me</button>
+    <button onclick="clickMe()">Onclick</button>
+    <div>
+        <input type="text" id="mass" placeholder="Mass in Kilogram" />
+        <input type="text" id="height" placeholder="Height in meters" />
+        <button id="button3">Calculate BMI</button>
+        <p id="bmi"></p>
+    </div>
+    <div class="">
+        <input type="text" id="input_listener" placeholder="say something" />
+        <p id="input_listener_p"></p>
+    </div>
+    <h1>Key events: Press any key</h1>
+
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', e => {
+            console.log('e gives the event listener object:', e)
+            console.log('e.target gives the selected element: ', e.target)
+            console.log('e.target.textContent gives content of selected element: ', e.target.textContent);
+        })
+        button.addEventListener('dblclick', e => {
+            console.log('e gives the event listener object:', e)
+            console.log('e.target gives the selected element: ', e.target)
+            console.log(
+                'e.target.textContent gives content of selected element: ',
+                e.target.textContent
+            )
+        })
+        button.addEventListener('mouseenter', e => {
+            console.log('e gives the event listener object:', e)
+            console.log('e.target gives the selected element: ', e.target)
+            console.log(
+                'e.target.textContent gives content of selected element: ',
+                e.target.textContent
+            )
+        })
+        const clickMe = () => {
+            alert('We can attach event on HTML element')
+        }
+
+        const mass = document.querySelector('#mass')
+        const height = document.querySelector('#height')
+        const button3 = document.querySelector('#button3')
+        const bmi = document.querySelector('#bmi')
+
+        let BMI
+        button3.addEventListener('click', () => {
+            BMI = mass.value / height.value ** 2
+            //alert(`Your BMI is ${BMI.toFixed(2)}`)
+            bmi.textContent = BMI.toFixed(2)
+        })
+        const input_listener = document.querySelector('#input_listener')
+        const input_listener_p = document.querySelector('#input_listener_p')
+        input_listener.addEventListener('input', e => {
+            input_listener_p.textContent = e.target.value
+        })
+        input_listener.addEventListener('blur', (e) => {
+            input_listener_p.textContent = 'Field is required'
+            input_listener_p.style.color = 'red'
+        })
+        document.body.addEventListener('keypress', e => {
+            console.log(e.keyCode)
+        })
+    </script>
+</body>
+
+</html>
