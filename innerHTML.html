@@ -1,48 +1,49 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>JavaScript for Everyone:DOM</title>
-  </head>
-  <body>
-    <div class="wrapper">
-        <h1>Asabeneh Yetayeh challenges in 2020</h1>
-        <h2>30DaysOfJavaScript Challenge</h2>
-        <ul></ul>
-    </div>
-    <script>
-    const lists = `
-    <li>30DaysOfPython Challenge Done</li>
-            <li>30DaysOfJavaScript Challenge Ongoing</li>
-            <li>30DaysOfReact Challenge Coming</li>
-            <li>30DaysOfFullStack Challenge Coming</li>
-            <li>30DaysOfDataAnalysis Challenge Coming</li>
-            <li>30DaysOfReactNative Challenge Coming</li>
-            <li>30DaysOfMachineLearning Challenge Coming</li>`
-  const ul = document.querySelector('ul')
-  ul.innerHTML = lists
-    </script>
-  </body>
-</html> -->
-
-
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>JavaScript for Everyone:DOM</title>
-  </head>
-  <body>
-    <div class="wrapper">
-        <h1>Asabeneh Yetayeh challenges in 2020</h1>
-        <h2>30DaysOfJavaScript Challenge</h2>
-        <ul>
-            <li>30DaysOfPython Challenge Done</li>
-            <li>30DaysOfJavaScript Challenge Ongoing</li>
-            <li>30DaysOfReact Challenge Coming</li>
-            <li>30DaysOfFullStack Challenge Coming</li>
-            <li>30DaysOfDataAnalysis Challenge Coming</li>
-            <li>30DaysOfReactNative Challenge Coming</li>
-            <li>30DaysOfMachineLearning Challenge Coming</li>
-        </ul>
-    </div>
-  </body>
+
+<head>
+  <title>JavaScript for Everyone:DOM</title>
+</head>
+
+<body>
+  <div class="wrapper" id="whole">
+    <h1>Asabeneh Yetayeh challenges in 2020</h1>
+    <h2>30DaysOfJavaScript Challenge</h2>
+    <h2 id="time_title"></h2>
+    <ul>
+      <li>30DaysOfPython Challenge Done</li>
+      <li>30DaysOfJavaScript Challenge Ongoing</li>
+      <li>30DaysOfReact Challenge Coming</li>
+      <li>30DaysOfFullStack Challenge Coming</li>
+      <li>30DaysOfDataAnalysis Challenge Coming</li>
+      <li>30DaysOfReactNative Challenge Coming</li>
+      <li>30DaysOfMachineLearning Challenge Coming</li>
+    </ul>
+  </div>
+  <script>
+    const title1 = document.querySelector('h1')
+    title1.style.color = 'green'
+    title1.style.textAlign = 'center'
+    const title2 = document.querySelector('h2')
+    title2.style.color = 'black'
+    title2.style.textAlign = 'center'
+    const lists = document.getElementsByTagName('li')
+    for (let i = 0; i < lists.length; i++) {
+      lists[i].style.textAlign = 'center'
+      lists[i].style.padding = '20px'
+      lists[i].style.margin = '20px 200px'
+      if (lists[i].textContent.endsWith('Done')) {
+        lists[i].style.backgroundColor = 'green'
+      }
+      else if (lists[i].textContent.endsWith('Coming')) {
+        lists[i].style.backgroundColor = 'red'
+      }
+      else if (lists[i].textContent.endsWith('Ongoing')) {
+        lists[i].style.backgroundColor = 'yellow'
+      }
+    }
+  </script>
+</body>
+
 </html>

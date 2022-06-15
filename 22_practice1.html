@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>practice</title>
+</head>
+
+<body>
+    <h1>Number </h1>
+    <h1>Fuad Hassan</h1>
+    <div class="wrapper">
+    </div>
+
+    <script>
+        const titles = document.querySelectorAll('h1')
+        titles.forEach((title) => {
+            title.style.color = 'black'
+            title.style.textAlign = 'center'
+        });
+        let number
+        for (let i = 10; i <= 100; i++) {
+            number = document.createElement('div')
+            number.className = 'number'
+            number.style.fontSize = '25px'
+            number.textContent = i
+            document.body.appendChild(number)
+            number.style.margin = '5px'
+            number.style.padding = '25px 25px 30px'
+            number.style.display = 'inline-block'
+            number.style.border = '1px solid black'
+            if( isPrime(i)== true){
+                number.style.backgroundColor = 'red'
+            }
+            else if (i % 2 === 0) {
+                number.style.backgroundColor = 'green'
+            }
+            else {
+                number.style.backgroundColor = 'yellow'
+            }
+        }
+
+        function isPrime(num) {
+            if (num < 2) return false;
+
+            for (let k = 2; k < num; k++) {
+                if (num % k == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
