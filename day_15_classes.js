@@ -1,74 +1,63 @@
 class Person {
-    constructor(
-        firstName = 'Asabeneh',
-        lastName = 'Yetayeh',
-        age = 250,
-        country = 'Finland',
-        city = 'Helsinki'
-    ) {
-        this.firstName = firstName
-        this.lastName = lastName
-        this.age = age
-        this.country = country
-        this.city = city
-    }
-}
-const person1 = new Person() // it will take the default values
-const person2 = new Person('Lidiya', 'Tekle', 28, 'Finland', 'Espoo')
-
-console.log(person1)
-console.log(person2)
-
-
-class Person2 {
     constructor(firstName, lastName, age, country, city) {
-        this.firstName = firstName
-        this.lastName = lastName
-        this.age = age
-        this.country = country
-        this.city = city
-        this.score = 0
-        this.skills = []
+      this.firstName = firstName
+      this.lastName = lastName
+      this.age = age
+      this.country = country
+      this.city = city
+      this.score = 0
+      this.skills = []
     }
     getFullName() {
-        const fullName = this.firstName + ' ' + this.lastName
-        return fullName
+      const fullName = this.firstName + ' ' + this.lastName
+      return fullName
     }
     get getScore() {
-        return this.score
+      return this.score
     }
     get getSkills() {
-        return this.skills
+      return this.skills
     }
     set setScore(score) {
-        this.score += score
+      this.score += score
     }
     set setSkill(skill) {
-        this.skills.push(skill)
+      this.skills.push(skill)
     }
-}
-
-const person10 = new Person2('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
-const person20 = new Person2('Lidiya', 'Tekle', 28, 'Finland', 'Espoo')
-
-console.log(person10.getScore) // We do not need parenthesis to call a getter method
-console.log(person20.getScore)
-
-console.log(person10.getSkills)
-console.log(person20.getSkills)
-
-person10.setScore = 1
-person10.setSkill = 'HTML'
-person10.setSkill = 'CSS'
-person10.setSkill = 'JavaScript'
-
-person20.setScore = 1
-person20.setSkill = 'Planning'
-person20.setSkill = 'Managing'
-person20.setSkill = 'Organizing'
-
-console.log(person10.score)
-console.log(person20.score)
-
-console.log(person10.skills)
-console.log(person20.skills)
+    getPersonInfo() {
+      let fullName = this.getFullName()
+      let skills =
+        this.skills.length > 0 &&
+        this.skills.slice(0, this.skills.length - 1).join(', ') +
+          ` and ${this.skills[this.skills.length - 1]}`
+      let formattedSkills = skills ? `He knows ${skills}` : ''
+  
+      let info = `${fullName} is ${this.age}. He lives ${this.city}, ${this.country}. ${formattedSkills}`
+      return info
+    }
+  }
+  
+  const person1 = new Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+  const person2 = new Person('Lidiya', 'Tekle', 28, 'Finland', 'Espoo')
+  const person3 = new Person('John', 'Doe', 50, 'Mars', 'Mars city')
+  
+  person1.setScore = 1
+  person1.setSkill = 'HTML'
+  person1.setSkill = 'CSS'
+  person1.setSkill = 'JavaScript'
+  
+  person2.setScore = 1
+  person2.setSkill = 'Planning'
+  person2.setSkill = 'Managing'
+  person2.setSkill = 'Organizing'
+  
+  console.log(person1.getScore)
+  console.log(person2.getScore)
+  
+  console.log(person1.getSkills)
+  console.log(person2.getSkills)
+  console.log(person3.getSkills)
+  
+  console.log(person1.getPersonInfo())
+  console.log(person2.getPersonInfo())
+  console.log(person3.getPersonInfo())
